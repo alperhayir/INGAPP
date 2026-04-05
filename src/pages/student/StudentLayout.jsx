@@ -74,7 +74,7 @@ export default function StudentLayout() {
           </Box>
           <Typography
             component={RouterLink}
-            to="/"
+            to="/dashboard"
             sx={{
               fontSize: 18,
               fontWeight: 800,
@@ -167,6 +167,8 @@ export default function StudentLayout() {
             </Typography>
           </Box>
           <Box
+            component={RouterLink}
+            to="/dashboard/settings"
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -175,8 +177,21 @@ export default function StudentLayout() {
               py: 1.5,
               borderRadius: 2.5,
               cursor: 'pointer',
-              color: colors.onSurfaceVariant,
-              '&:hover': { bgcolor: '#f3f2ff' },
+              textDecoration: 'none',
+              fontWeight: pathname.startsWith('/dashboard/settings')
+                ? 700
+                : 500,
+              bgcolor: pathname.startsWith('/dashboard/settings')
+                ? `${colors.primary}14`
+                : 'transparent',
+              color: pathname.startsWith('/dashboard/settings')
+                ? colors.primary
+                : colors.onSurfaceVariant,
+              '&:hover': {
+                bgcolor: pathname.startsWith('/dashboard/settings')
+                  ? `${colors.primary}14`
+                  : '#f3f2ff',
+              },
               transition: 'all 0.15s',
             }}
           >
@@ -184,7 +199,7 @@ export default function StudentLayout() {
             <Typography
               sx={{
                 display: { xs: 'none', lg: 'block' },
-                fontWeight: 500,
+                fontWeight: 'inherit',
                 fontSize: 14,
               }}
             >

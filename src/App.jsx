@@ -7,6 +7,7 @@ import Method from './pages/Method';
 import StudentLayout from './pages/student/StudentLayout';
 import Dashboard from './pages/student/Dashboard';
 import Lessons from './pages/student/Lessons';
+import Settings from './pages/student/Settings';
 import Register from './pages/auth/Register/Register';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/dashboard" element={<StudentLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="lessons" element={<Lessons />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
     </BrowserRouter>
