@@ -22,6 +22,7 @@ import colors from '../../theme/colors';
 const NAV_ITEMS = [
   { icon: <BarChartIcon />, label: 'Dashboard', to: '/admin/panel' },
   { icon: <MenuBookIcon />, label: 'Dersler', to: '/admin/panel/lessons' },
+  { icon: <PeopleIcon />, label: 'Topluluk', to: '/admin/panel/community' },
   { icon: <PeopleIcon />, label: 'Öğrenciler', to: null },
 ];
 
