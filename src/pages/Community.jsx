@@ -6,14 +6,12 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
 import ForumIcon from '@mui/icons-material/Forum';
 import GroupsIcon from '@mui/icons-material/Groups';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import colors from '../theme/colors';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -56,33 +54,6 @@ const HIGHLIGHTS = [
     color: colors.tertiary,
     bg: '#e8faf4',
     members: 36,
-  },
-];
-
-const EVENTS = [
-  {
-    title: 'İspanyolca Konuşma Kulübü',
-    date: 'Her Salı, 20:00',
-    level: 'B1-B2',
-    participants: 32,
-  },
-  {
-    title: 'Almanca Gramer Atölyesi',
-    date: 'Her Çarşamba, 19:00',
-    level: 'A2-B1',
-    participants: 18,
-  },
-  {
-    title: 'İngilizce Film Tartışması',
-    date: 'Her Cuma, 21:00',
-    level: 'B2-C1',
-    participants: 45,
-  },
-  {
-    title: 'Fransızca Başlangıç Sohbeti',
-    date: 'Her Pazartesi, 18:30',
-    level: 'A1-A2',
-    participants: 22,
   },
 ];
 
@@ -272,85 +243,6 @@ export default function Community() {
             ))}
           </Grid>
         </Container>
-
-        {/* Upcoming Events */}
-        <Box sx={{ bgcolor: '#f2efff', py: { xs: 8, md: 12 } }}>
-          <Container maxWidth="lg">
-            <Box sx={{ textAlign: 'center', mb: 8 }}>
-              <Typography variant="h4" fontWeight={800} sx={{ mb: 1 }}>
-                Yaklaşan Etkinlikler
-              </Typography>
-              <Box
-                sx={{
-                  width: 96,
-                  height: 6,
-                  bgcolor: colors.primary,
-                  mx: 'auto',
-                  borderRadius: 999,
-                }}
-              />
-            </Box>
-            <Grid container spacing={3}>
-              {EVENTS.map((event) => (
-                <Grid key={event.title} size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Paper
-                    elevation={0}
-                    sx={{
-                      p: 3,
-                      borderRadius: 3,
-                      bgcolor: '#fff',
-                      height: '100%',
-                      boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
-                    }}
-                  >
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      alignItems="center"
-                      sx={{ mb: 2 }}
-                    >
-                      <CalendarMonthIcon
-                        sx={{ fontSize: 18, color: colors.primary }}
-                      />
-                      <Typography
-                        variant="body2"
-                        sx={{ fontWeight: 700, color: colors.primary }}
-                      >
-                        {event.date}
-                      </Typography>
-                    </Stack>
-                    <Typography fontWeight={800} sx={{ mb: 1 }}>
-                      {event.title}
-                    </Typography>
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      alignItems="center"
-                      justifyContent="space-between"
-                    >
-                      <Chip
-                        label={event.level}
-                        size="small"
-                        sx={{
-                          fontWeight: 700,
-                          fontSize: 12,
-                          bgcolor: '#f2efff',
-                          color: colors.primary,
-                        }}
-                      />
-                      <Typography
-                        variant="caption"
-                        sx={{ color: colors.onSurfaceVariant, fontWeight: 600 }}
-                      >
-                        {event.participants} kişi
-                      </Typography>
-                    </Stack>
-                  </Paper>
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
-        </Box>
 
         {/* Testimonials */}
         <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
