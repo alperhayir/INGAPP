@@ -486,6 +486,31 @@ export default function Login() {
                 Kayıt Ol
               </Link>
             </Typography>
+
+            {/* Eğitmen Girişi */}
+            <Button
+              component={RouterLink}
+              to="/admin/login"
+              variant="outlined"
+              fullWidth
+              sx={{
+                mt: 2,
+                height: 48,
+                borderRadius: 999,
+                fontWeight: 700,
+                fontSize: 14,
+                textTransform: 'none',
+                borderColor: `${colors.outlineVariant}66`,
+                color: colors.onSurfaceVariant,
+                '&:hover': {
+                  bgcolor: '#f3f2ff',
+                  borderColor: colors.primary,
+                  color: colors.primary,
+                },
+              }}
+            >
+              Eğitmen Girişi
+            </Button>
           </Box>
         </Paper>
       </Box>
