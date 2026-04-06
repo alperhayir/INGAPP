@@ -357,6 +357,8 @@ export default function StudentLayout() {
               />
             </IconButton>
             <Avatar
+              component={RouterLink}
+              to="/dashboard/settings"
               sx={{
                 width: 40,
                 height: 40,
@@ -365,6 +367,7 @@ export default function StudentLayout() {
                 fontSize: 16,
                 fontWeight: 800,
                 cursor: 'pointer',
+                textDecoration: 'none',
               }}
             >
               C
