@@ -33,7 +33,7 @@ const NAV_ITEMS = [
   { icon: <DashboardIcon />, label: 'Dashboard', to: '/dashboard' },
   { icon: <MenuBookIcon />, label: 'Dersler', to: '/dashboard/lessons' },
   { icon: <PsychologyIcon />, label: 'Pratik', to: null },
-  { icon: <GroupsIcon />, label: 'Topluluk', to: null },
+  { icon: <GroupsIcon />, label: 'Topluluk', to: '/dashboard/community' },
 ];
 
 export default function StudentLayout() {

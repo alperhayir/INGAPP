@@ -13,6 +13,8 @@ import AdminLogin from './pages/Admin/AdminLogin';
 import AdminPanel from './pages/Admin/AdminPanel';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminLessons from './pages/Admin/AdminLessons';
+import AdminCommunity from './pages/Admin/AdminCommunity';
+import StudentCommunity from './pages/student/StudentCommunity';
 
 function App() {
   return (
@@ -28,10 +30,12 @@ function App() {
         <Route path="/admin/panel" element={<AdminPanel />}>
           <Route index element={<AdminDashboard />} />
           <Route path="lessons" element={<AdminLessons />} />
+          <Route path="community" element={<AdminCommunity />} />
         </Route>
         <Route path="/dashboard" element={<StudentLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="lessons" element={<Lessons />} />
+          <Route path="community" element={<StudentCommunity />} />
           <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
