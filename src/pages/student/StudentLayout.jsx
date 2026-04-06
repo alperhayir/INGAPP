@@ -1,4 +1,10 @@
-import { Link as RouterLink, Outlet, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import {
+  Link as RouterLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -7,6 +13,9 @@ import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import LogoutIcon from '@mui/icons-material/Logout';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -29,6 +38,9 @@ const NAV_ITEMS = [
 
 export default function StudentLayout() {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const profileMenuOpen = Boolean(anchorEl);
 
   return (
     <Box
@@ -357,8 +369,7 @@ export default function StudentLayout() {
               />
             </IconButton>
             <Avatar
-              component={RouterLink}
-              to="/dashboard/settings"
+              onClick={(e) => setAnchorEl(e.currentTarget)}
               sx={{
                 width: 40,
                 height: 40,
@@ -367,11 +378,45 @@ export default function StudentLayout() {
                 fontSize: 16,
                 fontWeight: 800,
                 cursor: 'pointer',
-                textDecoration: 'none',
               }}
             >
               C
             </Avatar>
+            <Menu
+              anchorEl={anchorEl}
+              open={profileMenuOpen}
+              onClose={() => setAnchorEl(null)}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+              slotProps={{
+                paper: {
+                  sx: {
+                    mt: 1,
+                    minWidth: 180,
+                    borderRadius: 3,
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                onClick={() => {
+                  setAnchorEl(null);
+                  navigate('/');
+                }}
+                sx={{
+                  gap: 1.5,
+                  py: 1.5,
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: '#ef4444',
+                  '&:hover': { bgcolor: '#fef2f2' },
+                }}
+              >
+                <LogoutIcon fontSize="small" />
+                Çıkış Yap
+              </MenuItem>
+            </Menu>
           </Stack>
         </Box>
 
