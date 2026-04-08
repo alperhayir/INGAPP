@@ -83,7 +83,7 @@ export default function Metrics() {
                   fontStyle="italic"
                   sx={{ color: colors.onSurface, fontWeight: 600, mb: 1.5 }}
                 >
-                  "Üç ayda İspanyolca konuşmaya başlayacağımı hayal bile
+                  "Üç ayda İngilizce konuşmaya başlayacağımı hayal bile
                   edemezdim. Metot gerçekten işe yarıyor."
                 </Typography>
                 <Typography variant="body2" fontWeight={800}>
